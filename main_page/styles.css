@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0c10;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* Forces the robot canvas container to occupy the absolute full screen */
+.viewport-area {
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensures the embedded window stretches perfectly without any gaps or borders */
+iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
