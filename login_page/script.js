@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('loginForm');
   const passkeyButton = document.getElementById('passkeyButton');
   const submitButton = form.querySelector('.submit-button');
+  const workspaceUrl = '../main_page/index.html';
 
   const eyeOpenPath = `
     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -29,16 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Quick passkey sign-in path (fast lane, no typing required)
   passkeyButton.addEventListener('click', () => {
-    const originalText = passkeyButton.querySelector('span').textContent;
     passkeyButton.disabled = true;
     passkeyButton.querySelector('span').textContent = 'Waiting for device...';
 
     setTimeout(() => {
       passkeyButton.querySelector('span').textContent = 'Signed in';
-      setTimeout(() => {
-        passkeyButton.querySelector('span').textContent = originalText;
-        passkeyButton.disabled = false;
-      }, 1200);
+      window.location.href = workspaceUrl;
     }, 700);
   });
 
@@ -54,17 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const originalText = submitButton.textContent;
     submitButton.textContent = 'Logging in...';
     submitButton.disabled = true;
 
     // Short delay to feel snappy rather than heavy
     setTimeout(() => {
       submitButton.textContent = 'Logged in';
-      setTimeout(() => {
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-      }, 1200);
+      window.location.href = workspaceUrl;
     }, 500);
   });
 

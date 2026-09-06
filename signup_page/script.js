@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const passwordToggle = document.getElementById('passwordToggle');
   const eyeIcon = passwordToggle.querySelector('.eye-icon');
   const form = document.getElementById('signupForm');
+  const workspaceUrl = '../main_page/index.html';
 
   const eyeOpenPath = `
     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -46,16 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const submitButton = form.querySelector('.submit-button');
-    const originalText = submitButton.textContent;
     submitButton.textContent = 'Creating account...';
     submitButton.disabled = true;
 
     setTimeout(() => {
       submitButton.textContent = 'Account created';
-      setTimeout(() => {
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-      }, 1500);
+      window.location.href = workspaceUrl;
     }, 900);
   });
 
