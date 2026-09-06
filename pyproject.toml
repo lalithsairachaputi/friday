@@ -24,6 +24,7 @@ dependencies = [
   "langdetect>=1.0.9",
   "edge-tts>=7.0.0",
   "aiofiles>=24.1.0",
+  "livekit-plugins-google>=1.8.0,<2",
 ]
 
 [project.optional-dependencies]
